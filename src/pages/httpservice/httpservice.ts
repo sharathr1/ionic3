@@ -17,14 +17,28 @@ declare var $: any;
 export class ServiceCompoment {
     errorMsg: any;
     output: any;
-
+    token: any;
     constructor(private _https: Http) {
 
+    }
+    refreshToken() {
+        let url = "https://fssfed.stage.ge.com/fss/as/token.oauth2?grant_type=client_credentials&client_id=GEHC_SiebelIntl_Services_2L_Client&client_secret=88fjqSB6V0nIuY4a9lmAn1oNARIggdaQAuFtvZKobxlxvEGhmpg41kAxgHKWoiS3&scope=GEHC_SiebelIntl_Services_2L_API";
+        return this._https.get(url).map((res) => res)
+            .map(
+            (data) => {
+                console.log("this.output =", data.json());
+                return data.json();
+            },
+            (error) => {
+                console.log("Error ", error);
+                return this.handleError(error);
+            }
+            );
     }
     createAuthorizationHeader(headers: Headers) {
         //  https://fssfed.stage.ge.com/fss/as/token.oauth2?grant_type=client_credentials&client_id=GEHC_SiebelIntl_Services_2L_Client&client_secret=88fjqSB6V0nIuY4a9lmAn1oNARIggdaQAuFtvZKobxlxvEGhmpg41kAxgHKWoiS3&scope=GEHC_SiebelIntl_Services_2L_API
 
-        headers.append('Authorization', 'bearer wD1pXP9cg9aCV5EpJhDkAd2898iS');
+        headers.append('Authorization', 'bearer wNUoR7XVpkJbe8TnXm9ZgsR9chvo');
         //    headers.append('Access-Control-Allow-Origin', 'Origin, Content-Type, X-Auth-Token');
         //  headers.append('Access-Control-Allow-Origin', '*');
         //   headers.append('Access-Control-Allow-Methods', 'GET');
@@ -65,7 +79,7 @@ export class ServiceCompoment {
             case 500:
                 msg = 'Server Error!!!';
             default:
-                msg = 'Error ' + (error.status ? error.status : '') + '!!!';
+                msg = 'Error : ' + (error.status ? error.status : '') + '!!!';
         }
     }
 }

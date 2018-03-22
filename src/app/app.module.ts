@@ -18,14 +18,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/operator/delay';
 import 'rxjs/operator/mergeMap';
 import 'rxjs/operator/switchMap';
-import { TimeTracker } from '../pages/activities/timetracker/timeetracker';
+import { TimeTracker } from '../pages/activities/timetracker/timetracker';
 import { RecommendedPart } from '../pages/activities/recommendedPart/recommendedPart';
 import { PartTracker } from "../pages/activities/parttracker/parttracker";
+import { Tracker } from '../pages/activities/trackers/tracker';
 @NgModule({
   declarations: [
     MyApp,
     HomePage, ServiceCompoment,
-    ListPage, Activities, TimeTracker, RecommendedPart, PartTracker,
+    ListPage, Activities, TimeTracker, RecommendedPart, PartTracker, Tracker,
     ServiceRequest
   ],
   imports: [
@@ -36,7 +37,7 @@ import { PartTracker } from "../pages/activities/parttracker/parttracker";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage, Activities, TimeTracker, RecommendedPart, PartTracker,
+    ListPage, Activities, TimeTracker, RecommendedPart, PartTracker, Tracker,
     ServiceRequest
   ],
   providers: [

@@ -16,11 +16,15 @@
         <ion-icon name="logo-skype" item-start></ion-icon>
         ServiceRequests
         <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-
       </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely responsible for bringing the service to a mass field engineers.
-      </p>
+      <div>
+        <button ion-button style="float:right; width: 30%;" block (click)="openMenu()">Status  </button>
+      </div>
+      <div>
+        <p>
+          The most popular industrial group ever, and largely responsible for bringing the service to a mass field engineers.
+        </p>
+      </div>
     </ion-card-content>
 
   </ion-card>
