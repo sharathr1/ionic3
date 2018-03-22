@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Time tracker</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from {{recommendedPart==null? "": recommendedPart|json}}
+  </div>
+  <h3>Recommended Part</h3>
+  <ion-badge item-end> {{recommendedPart.length}}</ion-badge>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of recommendedPart">
+     <span *ngIf="getKeys(item)">
+          <ion-grid  *ngFor="let key of keys">
+            <ion-row>
+                <ion-col>{{key}}</ion-col>
+                <ion-col>{{item[key]}}</ion-col>
+            </ion-row>
+        </ion-grid>
+    </span>
+    </button>
+  </ion-list>
+
+</ion-content>

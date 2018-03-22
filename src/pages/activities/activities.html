@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Activities</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Activities</h3>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{activityDetails==null? "": activityDetails.Id}}</b>
+    <span *ngIf="activityDetails!=null">
+            <b> <ion-row>
+                <ion-col>PrimaryOwnedBy ::</ion-col>
+                <ion-col>{{activityDetails.primaryOwnedBy}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>Type ::</ion-col>
+                <ion-col>{{activityDetails.type}}</ion-col>
+            </ion-row><ion-row>
+                <ion-col>Activity Status ::</ion-col>
+                <ion-col>{{activityDetails.activityStatus}}</ion-col>
+            </ion-row></b>
+     </span>
+
+  </div>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <ion-list>
+    List ::
+    <button ion-item *ngFor="let item of activityDetail" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+           {{item.title}}
+             <ion-badge item-end> {{item.size}}</ion-badge>
+    </button>
+
+  </ion-list>
+</ion-content>

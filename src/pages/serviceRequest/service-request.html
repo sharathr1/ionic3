@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SR</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h3>Smart FE </h3>
+
+  <ion-card>
+    <!--<img src="img/nin-live.png"/>-->
+    <ion-card-content>
+      <ion-card-title>
+        <ion-icon name="logo-skype" item-start></ion-icon>
+        ServiceRequests
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+      </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely responsible for bringing the service to a mass field engineers.
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+    <button ion-item [color]="item.status=='Open' ? 'primary' : 'secondary'" *ngFor="let item of activities" (click)="itemTapped($event, item)">
+            <ion-icon name="logo-angular" item-start></ion-icon>
+
+        <div class="card-title">  {{item.type}}</div>
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.activityId}}
+      <div class="item-note" item-end>
+        {{item.serialNumber}} -- {{item.status}}
+      </div>
+    </button>
+  </ion-card>
+
+</ion-content>
