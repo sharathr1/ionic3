@@ -38,11 +38,11 @@ export class ServiceCompoment {
     createAuthorizationHeader(headers: Headers) {
         //  https://fssfed.stage.ge.com/fss/as/token.oauth2?grant_type=client_credentials&client_id=GEHC_SiebelIntl_Services_2L_Client&client_secret=88fjqSB6V0nIuY4a9lmAn1oNARIggdaQAuFtvZKobxlxvEGhmpg41kAxgHKWoiS3&scope=GEHC_SiebelIntl_Services_2L_API
 
-        headers.append('Authorization', 'bearer wNUoR7XVpkJbe8TnXm9ZgsR9chvo');
+        headers.append('Authorization', 'bearer SF9HrPyk4Aanmz148CWDiG0lE7Ky');
         //    headers.append('Access-Control-Allow-Origin', 'Origin, Content-Type, X-Auth-Token');
         //  headers.append('Access-Control-Allow-Origin', '*');
         //   headers.append('Access-Control-Allow-Methods', 'GET');
-        headers.append('X-SSO_ID', '305009040');
+        headers.append('X-SSO_ID', '305015647');
 
 
     }
